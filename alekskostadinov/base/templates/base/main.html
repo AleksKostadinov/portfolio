@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="description" name="description">
+    <meta name="google" content="notranslate" />
+    <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-icon-180x180.png' %}">
+
+    <link href="{% static 'css/favicon.ico' %}" rel="icon">
+
+    <title>Home page</title>
+
+    <link href="{% static 'css/main.3f6952e4.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="minimal">
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
+    
+    {% include 'base/navbar.html' %}
+    <div class="hero-full-container background-image-container white-text-container" style="background-image: url('{% static 'images/caspar.jpg' %}');">
+      
+      {% block content %}
+      <!-- Content goes here -->
+      {% endblock content %}
+    </div>
+
+    {% include 'base/footer.html' %}
+  </body>
+
+</html>
