@@ -39,7 +39,7 @@ class Certificate(models.Model):
     description = models.CharField(max_length=300)
     issued_from = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
-    document = models.FileField(upload_to='document')
+    document = models.FileField(upload_to='certificates/')
     date = models.DateField(blank=True, null=True)
     grade = models.FloatField()
     link = models.URLField(blank=True)

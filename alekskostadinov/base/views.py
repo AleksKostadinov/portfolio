@@ -25,7 +25,7 @@ def contact(request):
 
 
 def certificates(request):
-    certificates = Certificate.objects.all()
+    certificates = Certificate.objects.order_by('-date')
     context = {
         'certificates': certificates,
     }
@@ -39,9 +39,4 @@ def work(request, pk):
     }
     return render(request, 'base/work.html', context)
 
-def certificate(request, pk):
-    certificate = Certificate.objects.get(id=pk)
-    context = {
-        'certificate': certificate,
-    }
-    return render(request, 'base/certificate.html', context)
+
