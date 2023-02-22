@@ -15,8 +15,10 @@ html {
 
 body {
     margin: 0;
-}
 
+    background: url('/images/caspar.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
 
 
 article,
@@ -367,7 +369,8 @@ img {
 .img-responsive {
     display: block;
     max-width: 100%;
-    height: auto
+    height: auto;
+    margin-top: 5px;
 }
 
 .img-rounded {
@@ -523,7 +526,7 @@ h6 small {
 
 .h1,
 h1 {
-    font-size: 70px
+    font-size: 60px
 }
 
 .h2,
@@ -5719,7 +5722,7 @@ body.minimal {
 
 @media (min-width: 1200px) {
     .section-container-spacer {
-        margin-bottom: 40px
+        margin-bottom: 30px
     }
 }
 
@@ -5729,7 +5732,7 @@ body.minimal {
 
 @media (min-width: 1200px) {
     .section-container {
-        padding: 80px 0
+        padding: 70px 0
     }
 }
 
@@ -5746,8 +5749,8 @@ body.minimal {
 .background-image-container {
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top;
-
+    background-position: center;
+    /*background-image: url('/images/caspar.jpg');*/
 }
 
 .btn {
@@ -5807,12 +5810,14 @@ body.minimal {
 body,
 p {
     font-weight: 300;
+
     letter-spacing: .8px;
-    line-height: 25px
+
+
 }
 
 p {
-    margin: 0 0 15px
+    margin: 0 0 10px
 }
 
 .h2,
@@ -5862,13 +5867,16 @@ h2:after {
 
 .h1,
 .h2,
-.h3,
 h1,
-h2,
-h3 {
-    margin-bottom: 20px
+h2 {
+    margin-top: 15px;
+    margin-bottom: 15px
 }
-
+.h3,
+h3 {
+    margin-top: 0px;
+    margin-bottom: 15px
+}
 blockquote {
     font-family: Roboto Mono, Helvetica, Arial, sans-serif;
     border: none;
@@ -5926,11 +5934,21 @@ textarea {
 
 .card-container {
     background-color: #030000cd;
-    padding: 2rem 5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
     position: relative;
     width: 80%;
-    margin: -10em auto 20px
+    margin: -4em auto 20px;
+
+
 }
+
+/*.card-container p {*/
+/*    flex-grow: 1;*/
+/*}*/
+
 
 @media (max-width: 992px) {
     .card-container {
@@ -5975,7 +5993,8 @@ textarea {
     }
 
     .projects-carousel .carousel-inner > .item {
-        display: block
+        display: block;
+
     }
 }
 
@@ -6191,11 +6210,17 @@ textarea {
     float: left;
     margin-right: 5px
 }
+
 .about {
-    font-size: 1em;
+    font-size: 1.11em;
     margin-bottom: 1em;
     text-align: center;
 }
 
 
 /*# sourceMappingURL=main.70a66962.map*/
+
+.projects-carousel .item img {
+    width: 100%;
+    height: 230px;
+}
