@@ -28,3 +28,22 @@ class Work(models.Model):
             self.slug = slug
 
         super().save(*args, **kwargs)
+
+
+class Certificate(models.Model):
+    
+    class Meta:
+        ordering = ['date']
+    
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=300)
+    issued_from = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=True)
+    document = models.FileField(upload_to='document')
+    date = models.DateField(blank=True, null=True)
+    grade = models.FloatField()
+    link = models.URLField(blank=True)
+    
+    def __str__(self):
+        return self.name
+    

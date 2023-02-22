@@ -1,6 +1,7 @@
+from multiprocessing import context
 from django.shortcuts import render
 
-from base.models import Work
+from base.models import Certificate, Work
 
 
 def home(request):
@@ -8,7 +9,7 @@ def home(request):
 
 
 def works(request):
-    works = Work.objects.filter()[0:3]
+    works = Work.objects.all()
     context = {
         'works': works,
     }
@@ -24,7 +25,11 @@ def contact(request):
 
 
 def certificates(request):
-    return render(request, 'base/certificates.html')
+    certificates = Certificate.objects.all()
+    context = {
+        'certificates': certificates,
+    }
+    return render(request, 'base/certificates.html', context)
 
 
 def work(request, pk):
@@ -33,3 +38,10 @@ def work(request, pk):
         'work': work,
     }
     return render(request, 'base/work.html', context)
+
+def certificate(request, pk):
+    certificate = Certificate.objects.get(id=pk)
+    context = {
+        'certificate': certificate,
+    }
+    return render(request, 'base/certificate.html', context)
