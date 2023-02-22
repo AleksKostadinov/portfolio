@@ -1,7 +1,7 @@
 {% extends 'base/main.html' %}
 {% load static %}
 {% block content %}
-<div class="section-container">
+
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
@@ -16,27 +16,24 @@
 			<div class="col-md-12">
 				<div id="myCarousel" class="carousel slide projects-carousel">
 					<div class="carousel-inner">
-						{% for work in works %}
-							{% if forloop.counter0|divisibleby:3 %}
-								<div class="item {% if forloop.first %}active{% endif %}">
-								<div class="row">
-							{% endif %}
-						<div class="col-sm-4">
-							<a href="{% url 'work' work.id %}" title="" class="black-image-project-hover">
-								<img src="{{ work.image.url }}" alt="" class="img-responsive">
-							</a>
-							<div class="card-container card-container-lg">
-								<h4>{{ work.id }}/{{ works|length }}</h4>
-								<h3>{{ work.headline }}</h3>
-								<p>{{ work.text }}</p>
-								<a href="{% url 'work' work.id %}" title="" class="btn btn-default">Discover</a>
+						<div class="item active">
+							<div class="row">
+								{% for work in works %}
+									<div class="col-sm-4">
+										<a href="{% url 'work' work.id %}" title="" class="black-image-project-hover">
+											<img src="{{ work.image.url }}" alt=""
+											     class="img-responsive">
+										</a>
+										<div class="card-container card-container-lg">
+											<h4>{{ work.id }}</h4>
+											<h3>{{ work.headline }}</h3>
+											<p>{{ work.text }}</p>
+											<a href="{% url 'work' work.id %}" title="" class="btn btn-default">Discover</a>
+										</div>
+									</div>
+								{% endfor %}
 							</div>
 						</div>
-						{% if forloop.counter0|add:1|divisibleby:3 or forloop.last %}
-							</div>
-							</div>
-						{% endif %}
-						{% endfor %}
 					</div>
 					<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
 					<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
@@ -45,6 +42,4 @@
 		</div>
 	</div>
 
-</div>
 {% endblock content %}
-

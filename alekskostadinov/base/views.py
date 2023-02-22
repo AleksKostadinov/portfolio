@@ -8,7 +8,7 @@ def home(request):
 
 
 def works(request):
-    works = Work.objects.all()
+    works = Work.objects.filter()[0:3]
     context = {
         'works': works,
     }

@@ -23,14 +23,13 @@
   </head>
 
   <body class="minimal">
-  {% include 'base/navbar.html' %}
     <div id="site-border-left"></div>
     <div id="site-border-right"></div>
     <div id="site-border-top"></div>
     <div id="site-border-bottom"></div>
     
-
-    <div class="hero-full-container background-image-container white-text-container" >
+    {% include 'base/navbar.html' %}
+    <div class="hero-full-container background-image-container white-text-container" style="background-image: url('{% static 'images/caspar.jpg' %}');">
       
       {% block content %}
       <!-- Content goes here -->
