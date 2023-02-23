@@ -1,35 +1,48 @@
 {% extends 'base/main.html' %}
 {% load static %}
 {% block content %}
-<div class="section-container">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="section-container-spacer text-center">
-					<h1 class="h2">About me</h1>
-				</div>
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="row">
-							<div class="col-xs-12 col-md-6">
-{#								<h3>Hello and welcome to my portfolio!</h3>#}
-								<p class="about" >My name is Aleksandar and I'm a new developer
-									excited to explore the world of web development. I have always been passionate about
-									technology and coding, and I've recently taken the leap into learning how to develop
-									web applications using Django.</p>
+	<div class="section-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="section-container-spacer text-center">
+						<h1 class="h2">About me</h1>
+					</div>
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1">
+							<div class="row">
+								<div class="col-xs-12 col-md-6">
+									{#								<h3>Hello and welcome to my portfolio!</h3>#}
+									<p class="about">My name is Aleksandar and I'm a new developer
+										excited to explore the world of web development. I have always been passionate
+										about
+										technology and coding, and I've recently taken the leap into learning how to
+										develop
+										web applications using Django.</p>
 
-								<p class="about" >As a new developer, I'm eager to continue learning and growing my skills. I'm a
-									dedicated and hardworking individual who is always up for a challenge. I love the
-									problem-solving aspect of coding and the satisfaction that comes with building
-									something from scratch.</p>
+									<p class="about">As a new developer, I'm eager to continue learning and growing my
+										skills. I'm a
+										dedicated and hardworking individual who is always up for a challenge. I love
+										the
+										problem-solving aspect of coding and the satisfaction that comes with building
+										something from scratch.</p>
 
-								<p class="about" >In my free time, you can usually find me tinkering with new code projects, reading
-									up on the latest tech trends, or exploring the outdoors with my family. I'm looking
-									forward to sharing my projects with you and continuing to grow as a developer in the
-									exciting world of Django.</p>
+									<p class="about">In my free time, you can usually find me tinkering with new code
+										projects, reading
+										up on the latest tech trends, or exploring the outdoors with my family. I'm
+										looking
+										forward to sharing my projects with you and continuing to grow as a developer in
+										the
+										exciting world of Django.</p>
+								</div>
+								<div class="col-xs-12 col-md-6">
+									<img src="{% static 'images/profil.jpg' %}" class="img-responsive" alt="">
+								</div>
 							</div>
-							<div class="col-xs-12 col-md-6">
-								<img src="{% static 'images/profil.jpg' %}" class="img-responsive" alt="">
+							<br>
+							<div class="text-center">
+								<a class="btn btn-default btn-lg" href="{% static 'images/CV.pdf' %}" role="button">Discover
+									CV</a>
 							</div>
 						</div>
 					</div>
@@ -37,5 +50,6 @@
 			</div>
 		</div>
 	</div>
-</div>
+
+
 {% endblock content %}
