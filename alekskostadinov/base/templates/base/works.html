@@ -22,14 +22,14 @@
 								<div class="row">
 							{% endif %}
 						<div class="col-sm-4">
-							<a href="{% url 'work' work.id %}" title="" class="black-image-project-hover">
+							<a href="{% url 'work' work.slug %}" title="" class="black-image-project-hover">
 								<img src="{{ work.image.url }}" alt="" class="img-responsive">
 							</a>
 							<div class="card-container card-container-lg">
 								<h4>{{ work.id }}/{{ works|length }}</h4>
 								<h3>{{ work.headline }}</h3>
 								<p>{{ work.text }}</p>
-								<a href="{% url 'work' work.id %}" title="" class="btn btn-default">Discover</a>
+								<a href="{% url 'work' work.slug %}" title="" class="btn btn-default">Discover</a>
 							</div>
 						</div>
 						{% if forloop.counter0|add:1|divisibleby:3 or forloop.last %}

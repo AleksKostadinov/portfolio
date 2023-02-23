@@ -33,8 +33,8 @@ def certificates(request):
     return render(request, 'base/certificates.html', context)
 
 
-def work(request, pk):
-    work = Work.objects.get(id=pk)
+def work(request, slug):
+    work = Work.objects.get(slug=slug)
     context = {
         'work': work,
     }
