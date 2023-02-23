@@ -1,7 +1,8 @@
-from multiprocessing import context
 from django.shortcuts import render
-
 from base.models import Certificate, Work
+from django.core.mail import EmailMessage
+from django.conf import settings
+from django.template.loader import render_to_string
 
 
 def home(request):
@@ -40,3 +41,23 @@ def work(request, pk):
     return render(request, 'base/work.html', context)
 
 
+def send_email(request):
+
+    if request.method == 'POST':
+
+        template = render_to_string('base/email_template.html', {
+            'name': request.POST['name'],
+            'email': request.POST['email'],
+            'message': request.POST['message'],
+        })
+
+        email = EmailMessage(
+            request.POST['name'],
+            template,
+            settings.EMAIL_HOST_USER,
+            ['kostadinov12@gmail.com']
+        )
+        email.fail_silently = False
+        email.send()
+
+    return render(request, 'base/email_sent.html')
