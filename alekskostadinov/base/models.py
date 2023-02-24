@@ -1,14 +1,19 @@
 from django.db import models
 from django.utils.text import slugify
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Work(models.Model):
     headline = models.CharField(max_length=50)
-    text = models.TextField(max_length=200, null=True, blank=True)
-    image = models.ImageField(upload_to='images')
+    sub_headline = models.CharField(max_length=100, null=True, blank=True)
+    text = models.CharField(max_length=100, null=True, blank=True)
+    image = models.ImageField(upload_to='images', null=True, blank=True)
     active = models.BooleanField(default=False)
     slug = models.SlugField(null=True, blank=True)
     link = models.URLField(null=True, blank=True)
+    favourite = models.BooleanField(default=True)
+    thumbnail = models.ImageField(null=True, blank=True, upload_to="images")
+    body = RichTextUploadingField(null=True, blank=True)
 
     def __str__(self):
         return self.headline
@@ -31,10 +36,9 @@ class Work(models.Model):
 
 
 class Certificate(models.Model):
-    
     class Meta:
         ordering = ['date']
-    
+
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=300)
     issued_from = models.CharField(max_length=100)
@@ -43,7 +47,6 @@ class Certificate(models.Model):
     date = models.DateField(blank=True, null=True)
     grade = models.FloatField()
     link = models.URLField(blank=True)
-    
+
     def __str__(self):
         return self.name
-    

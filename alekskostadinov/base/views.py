@@ -35,6 +35,7 @@ def certificates(request):
 
 def work(request, slug):
     work = Work.objects.get(slug=slug)
+
     context = {
         'work': work,
     }

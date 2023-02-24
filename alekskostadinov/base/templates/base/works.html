@@ -1,50 +1,55 @@
 {% extends 'base/main.html' %}
 {% load static %}
 {% block content %}
-<div class="section-container">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-				<div class="text-center">
-					<h1 class="h2">Works</h1>
-					<p>Below are some examples of the projects that I've had the pleasure of working on.
-						From blog sites to web applications, I've had the chance to tackle a range of challenges.
-						Take a look at my work and see how my skills in Django have helped bring these projects to
-						life.</p>
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div id="myCarousel" class="carousel slide projects-carousel">
-					<div class="carousel-inner">
-						{% for work in works %}
-							{% if forloop.counter0|divisibleby:3 %}
-								<div class="item {% if forloop.first %}active{% endif %}">
-								<div class="row">
-							{% endif %}
-						<div class="col-sm-4">
-							<a href="{% url 'work' work.slug %}" title="" class="black-image-project-hover">
-								<img src="{{ work.image.url }}" alt="" class="img-responsive">
-							</a>
-							<div class="card-container card-container-lg">
-								<h4>{{ work.id }}/{{ works|length }}</h4>
-								<h3>{{ work.headline }}</h3>
-								<p>{{ work.text }}</p>
-								<a href="{% url 'work' work.slug %}" title="" class="btn btn-default">Discover</a>
-							</div>
-						</div>
-						{% if forloop.counter0|add:1|divisibleby:3 or forloop.last %}
-							</div>
-							</div>
-						{% endif %}
-						{% endfor %}
+	<div class="section-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+					<div class="text-center">
+						<h1 class="h2">Works</h1>
+						<p>Below are some examples of the projects that I've had the pleasure of working on.
+							From blog sites to web applications, I've had the chance to tackle a range of challenges.
+							Take a look at my work and see how my skills in Django have helped bring these projects to
+							life.</p>
 					</div>
-					<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-					<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+				</div>
+				<div class="col-md-12">
+					<div id="myCarousel" class="carousel slide projects-carousel">
+						<div class="carousel-inner">
+							{% for work in works %}
+								{% if work.favourite %}
+									{% if forloop.counter0|divisibleby:3 %}
+										<div class="item {% if forloop.first %}active{% endif %}">
+										<div class="row">
+									{% endif %}
+								<div class="col-sm-4">
+									<a href="{% url 'work' work.slug %}" title="" class="black-image-project-hover">
+										{% if work.image %}
+											<img src="{{ work.image.url }}" alt="" class="img-responsive">
+										{% endif %}
+									</a>
+									<div class="card-container card-container-lg">
+										<h4>{{ work.id }}/{{ works|length }}</h4>
+										<h3>{{ work.headline }}</h3>
+										<p>{{ work.text }}</p>
+										<a href="{% url 'work' work.slug %}" title=""
+										   class="btn btn-default">Discover</a>
+									</div>
+								</div>
+								{% if forloop.counter0|add:1|divisibleby:3 or forloop.last %}
+									</div>
+									</div>
+								{% endif %}
+								{% endif %}
+							{% endfor %}
+						</div>
+						<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+						<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-</div>
+	</div>
 {% endblock content %}
 

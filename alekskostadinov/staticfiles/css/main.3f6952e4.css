@@ -16,7 +16,7 @@ html {
 body {
     margin: 0;
 
-    background: url('/images/caspar.jpg') no-repeat center center fixed;
+    background: url('/static/images/caspar.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -5699,7 +5699,8 @@ body.minimal {
 }
 
 .hero-full-container .hero-full-wrapper .text-content {
-    vertical-align: middle;
+    padding-top: 25%;
+
     display: table-cell
 }
 
