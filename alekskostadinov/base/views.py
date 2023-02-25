@@ -10,7 +10,7 @@ def home(request):
 
 
 def works(request):
-    works = Work.objects.all()
+    works = Work.objects.order_by('id')
     context = {
         'works': works,
     }
