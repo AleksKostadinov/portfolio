@@ -27,9 +27,11 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('SERVERNAMES').split(' ')
+ALLOWED_HOSTS = ['.vercel.app']
+# ALLOWED_HOSTS = os.getenv('SERVERNAMES').split(' ')
 
-# CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOED_HOSTS]
+# CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOWED_HOSTS]
+# CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED').split(' ')
 
 # Application definition
 
@@ -163,3 +165,4 @@ AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_QUERYSTRING_AUTH = False
+
