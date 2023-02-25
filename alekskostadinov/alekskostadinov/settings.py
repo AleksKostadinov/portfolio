@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = os.getenv('SERVERNAMES').split(' ')
 
-# CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOWED_HOSTS]
+# CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOED_HOSTS]
 
 # Application definition
 
