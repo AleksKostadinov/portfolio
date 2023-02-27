@@ -30,6 +30,7 @@
 									</a>
 									<div class="card-container card-container-lg">
 										<h4>{{ work.id }}/{{ works|length }}</h4>
+										<h5>{{ work.sub_headline }}</h5>
 										<h3>{{ work.headline }}</h3>
 										<p>{{ work.text }}</p>
 										<a href="{% url 'work' work.slug %}" title=""
