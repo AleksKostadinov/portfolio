@@ -2,43 +2,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width,initial-scale=1" name="viewport">
-    <meta content="description" name="description">
-    <meta name="google" content="notranslate" />
-    <meta content="Mashup templates have been developped by Orson.io team" name="author">
-	<script src="https://www.google.com/recaptcha/api.js?render={{ RECAPTCHA_PUBLIC_KEY }}"></script>
+<head>
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<meta content="description" name="description">
+	<meta content="Mashup templates have been developped by Orson.io team" name="author">
 
-    <!-- Disable tap highlight on IE -->
-    <meta name="msapplication-tap-highlight" content="no">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-icon-180x180.png' %}">
+	<!-- Disable tap highlight on IE -->
+	<meta name="msapplication-tap-highlight" content="no">
 
-    <link rel="icon" href="data:,">
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-icon-180x180.png' %}">
 
-    <title>Home page</title>
+	<link rel="icon" href="data:,">
 
-    <link href="{% static 'css/main.3f6952e4.css' %}" rel="stylesheet">
-  </head>
+	<title>Home page</title>
 
-  <body class="minimal">
-  {% include 'base/navbar.html' %}
-    <div id="site-border-left"></div>
-    <div id="site-border-right"></div>
-    <div id="site-border-top"></div>
-    <div id="site-border-bottom"></div>
-    
+	<link href="{% static 'css/main.3f6952e4.css' %}" rel="stylesheet">
+</head>
 
-    <div class="hero-full-container background-image-container white-text-container" >
-      
-      {% block content %}
-      <!-- Content goes here -->
-      {% endblock content %}
-    </div>
+<body class="minimal">
+	<header>
+		{% include 'base/navbar.html' %}
+	</header>
 
-    {% include 'base/footer.html' %}
-  </body>
+	<main>
+		<div class="hero-full-container background-image-container white-text-container">
+			{% block content %}
+				<!-- Content goes here -->
+			{% endblock content %}
+		</div>
+	</main>
+
+	<footer>
+		{% include 'base/footer.html' %}
+	</footer>
+</body>
 
 </html>

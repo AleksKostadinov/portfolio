@@ -26,7 +26,6 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'storages',
-    'captcha',
     'honeypot',
 ]
 
@@ -149,6 +148,3 @@ AWS_QUERYSTRING_AUTH = False
 CSRF_TRUSTED_ORIGINS = ['https://alekskostadinov.site']
 HONEYPOT_FIELD_NAME = "secret_key"
 
-RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
-RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY')
-RECAPTCHA_REQUIRED_SCORE = 0.75

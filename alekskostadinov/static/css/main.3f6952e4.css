@@ -5953,19 +5953,29 @@ textarea {
 
 
 @media (max-width: 992px) {
+    h1{
+        font-size:30px;
+    }
     .card-container {
+        background-color: transparent;
         padding: 2rem;
-        margin-top: -5em
+        /*margin-top: -5em;*/
+        height: 100%;
+        display: flex;
+        flex-direction:column;
+        position: relative;
+        width: auto;
+
     }
 }
 
-@media (max-width: 992px) {
-    .card-container.card-container-lg {
-        width: 95%;
-        padding: 2rem 3em;
-        margin-top: -10em
-    }
-}
+/*@media (max-width: 992px) {*/
+/*    .card-container.card-container-lg {*/
+/*        width: 95%;*/
+/*        padding: 2rem 3em;*/
+/*        margin-top: -10em*/
+/*    }*/
+/*}*/
 
 .black-image-project-hover {
     display: block

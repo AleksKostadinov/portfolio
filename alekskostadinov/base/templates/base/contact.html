@@ -21,12 +21,13 @@
 						</div>
 						<br>
 						<div class="row">
-
 							<div class="col-md-10 col-md-offset-1">
+
 								<form action="{% url 'send email' %}" method="POST" class="reveal-content">
 									{% csrf_token %}
 									<div class="row">
 										<div class="col-md-7">
+											<input type="text" name="foo" style="display: none;">
 											<div class="form-group">
 												<input type="name" class="form-control" name="name" placeholder="Name">
 											</div>
@@ -38,28 +39,29 @@
 												<textarea class="form-control" rows="5" name="message"
 												          placeholder="Enter your message"></textarea>
 											</div>
-											<div class="g-recaptcha" data-sitekey="{{ RECAPTCHA_PUBLIC_KEY }}"></div>
+
 											<button type="submit" class="btn btn-default btn-lg">Send</button>
 										</div>
+
 										<div class="col-md-5 address-container">
 											<ul class="list-unstyled">
 												<li>
-                      <span class="fa-icon">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                      </span>
-													+ 359 879 52 73 66
+								                      <span class="fa-icon">
+								                        <i class="fa fa-phone" aria-hidden="true"></i>
+								                      </span>
+													+ 359 879 52 73 XX
 												</li>
 												<li>
-                      <span class="fa-icon">
-                        <i class="fa fa-at" aria-hidden="true"></i>
-                      </span>
+								                      <span class="fa-icon">
+								                        <i class="fa fa-at" aria-hidden="true"></i>
+								                      </span>
 													kostadinov12@gmail.com
 												</li>
 												<li>
-                      <span class="fa-icon">
-                        <i class="fa fa fa-map-marker" aria-hidden="true"></i>
-                      </span>
-													16 Kostur 1618 Sofia
+								                      <span class="fa-icon">
+								                        <i class="fa fa fa-map-marker" aria-hidden="true"></i>
+								                      </span>
+													16 XXXXXX 1618 Sofia
 												</li>
 											</ul>
 											<h3>Follow me on social networks:</h3>
@@ -83,5 +85,14 @@
 			</div>
 		</div>
 	</div>
-
+	<div id="fooDiv">
+	<label for="foo">Leave this field blank</label>
+	<input type="text" name="foo" id="foo">
+	</div>
+	<script>
+	(function () {
+	    var e = document.getElementById("fooDiv");
+	    e.parentNode.removeChild(e);
+	})();
+	</script>
 {% endblock content %}
