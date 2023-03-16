@@ -2,21 +2,21 @@
 {% load static %}
 {% block content %}
 
-	<div class="section-container">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-					<div class="text-center">
-						<h1 class="h2">{{ work.headline }}</h1>
-						{% if work.body %}
-							<p>{{ work.body|safe }}</p>
-						{% else %}
-							<p>In progress...</p>
-						{% endif %}
-					</div>
+<div class="section-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+				<div class="text-center" id="works">
+					<h1 class="h2">{{ work.headline }}</h1>
+					{% if work.body %}
+					<p>{{ work.body|safe }}</p>
+					{% else %}
+					<p>In progress...</p>
+					{% endif %}
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
 {% endblock content %}

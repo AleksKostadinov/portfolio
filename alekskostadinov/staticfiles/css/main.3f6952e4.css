@@ -4252,7 +4252,7 @@ tbody.collapse.in {
 
 .navbar-fixed-bottom,
 .navbar-fixed-top {
-    position: fixed;
+    /*position: fixed;*/
     right: 0;
     left: 0;
     z-index: 1030
@@ -4348,7 +4348,7 @@ tbody.collapse.in {
 
 @media (max-width: 767px) {
     .navbar-nav .open .dropdown-menu {
-        position: static;
+        position: relative;
         float: none;
         width: auto;
         margin-top: 0;
@@ -5672,19 +5672,9 @@ button.close {
     bottom: 0
 }
 
-body {
-    padding: 10px;
-    min-height: 100vh
-}
 
-body.minimal {
-    border: none;
-    padding: 0
-}
 
-.hero-full-container {
-    height: 100vh
-}
+
 
 .hero-full-container h1 {
     font-family: Roboto, Helvetica, Arial, sans-serif;
@@ -5694,12 +5684,11 @@ body.minimal {
 .hero-full-container .hero-full-wrapper {
     display: table;
     width: 100%;
-    height: 100vh;
-    min-height: 100vh
+
 }
 
 .hero-full-container .hero-full-wrapper .text-content {
-    padding-top: 25%;
+    padding-top: 10%;
 
     display: table-cell
 }
@@ -5728,15 +5717,15 @@ body.minimal {
     }
 }
 
-.section-container {
-    padding: 60px 0
-}
+/*.section-container {*/
+/*    padding: 60px 0*/
+/*}*/
 
-@media (min-width: 1200px) {
-    .section-container {
-        padding: 70px 0
-    }
-}
+/*@media (min-width: 1200px) {*/
+/*    .section-container {*/
+/*        padding: 70px 0*/
+/*    }*/
+/*}*/
 
 .section-container.only-container {
     min-height: 84vh
@@ -5871,12 +5860,12 @@ h2:after {
 .h2,
 h1,
 h2 {
-    margin-top: 15px;
-    margin-bottom: 15px
+    /*margin-top: 40px;*/
+    /*margin-bottom: 15px*/
 }
 .h3,
 h3 {
-    margin-top: 0px;
+    /*margin-top: 0px;*/
     margin-bottom: 15px
 }
 blockquote {
@@ -5953,19 +5942,32 @@ textarea {
 
 
 @media (max-width: 992px) {
+    h1{
+        font-size:30px;
+    }
+    h3{
+        font-size: 17px;
+    }
     .card-container {
+        background-color: transparent;
         padding: 2rem;
-        margin-top: -5em
+        /*margin-top: -5em;*/
+        height: 100%;
+        display: flex;
+        flex-direction:column;
+        position: relative;
+        width: auto;
+
     }
 }
 
-@media (max-width: 992px) {
-    .card-container.card-container-lg {
-        width: 95%;
-        padding: 2rem 3em;
-        margin-top: -10em
-    }
-}
+/*@media (max-width: 992px) {*/
+/*    .card-container.card-container-lg {*/
+/*        width: 95%;*/
+/*        padding: 2rem 3em;*/
+/*        margin-top: -10em*/
+/*    }*/
+/*}*/
 
 .black-image-project-hover {
     display: block
@@ -6224,7 +6226,8 @@ textarea {
 
 .projects-carousel .item img {
     width: 100%;
-    height: 230px;
+    height: 100%;
+    object-fit: cover;
 }
 
 .certificate-list {
