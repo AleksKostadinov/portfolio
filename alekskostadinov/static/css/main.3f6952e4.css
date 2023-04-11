@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:900|Roboto+Mono:300,400,700);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:900|Roboto+Mono:300,400,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css); */
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -13,12 +13,12 @@ html {
     -webkit-text-size-adjust: 100%
 }
 
-body {
-    margin: 0;
+/*body {*/
+/*    margin: 0;*/
 
-    background: url('/static/images/caspar.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
+/*    background: url('/static/images/caspar.jpg') no-repeat center center fixed;*/
+/*    background-size: cover;*/
+/*}*/
 
 
 article,
@@ -2861,7 +2861,7 @@ textarea.input-lg {
 
 .btn {
     display: inline-block;
-    margin-bottom: 0;
+    margin-top: auto;
     font-weight: 400;
     text-align: center;
     vertical-align: middle;
@@ -5737,17 +5737,16 @@ button.close {
     }
 }
 
-.background-image-container {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    /*background-image: url('/images/caspar.jpg');*/
-}
+/*.background-image-container {*/
+/*    background-size: cover;*/
+/*    background: url('/static/images/caspar.jpg') no-repeat center center fixed;*/
+/*}*/
 
 .btn {
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
     transition: all .2s linear;
+    
 }
 
 /* .btn-default {
@@ -5800,10 +5799,9 @@ button.close {
 
 body,
 p {
-    font-weight: 300;
-
-    letter-spacing: .8px;
-
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 12px;
 
 }
 
@@ -5927,7 +5925,7 @@ textarea {
 
 .card-container {
     background-color: #030000cd;
-    height: 100%;
+    height: 260px;
     display: flex;
     flex-direction: column;
     padding: 1rem 2rem;
@@ -5956,7 +5954,7 @@ textarea {
         background-color: transparent;
         padding: 2rem;
         /*margin-top: -5em;*/
-        height: 100%;
+        height: 260px;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -6220,8 +6218,8 @@ textarea {
 }
 
 .about {
-    font-size: 1.11em;
-    margin-bottom: 1em;
+    font-size: 1.10em;
+    margin-bottom: 0.8em;
     text-align: center;
 }
 
@@ -6241,12 +6239,12 @@ textarea {
 }
 
 .certificate {
-    width: 33.33%;
+    width: 25%;
 }
 
 .certificate-image img {
     margin-top: 15px;
-    max-width: 50%;
+    max-width: 60%;
     height: auto;
 }
 
@@ -6259,3 +6257,17 @@ textarea {
     padding: 1rem 2rem;
 
 }
+
+@media (max-width: 768px) {
+    .col-sm-4 a img.img-responsive{
+        width: 100%;
+    }
+}
+
+.certificate-image img {
+    transition: all 300ms ease-in-out;
+}
+
+.certificate-image img:hover {
+    transform: scale(1.1) rotate(-8deg);
+  }

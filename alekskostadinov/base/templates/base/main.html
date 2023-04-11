@@ -2,42 +2,50 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta content="IE=edge" http-equiv="X-UA-Compatible">
-	<meta content="width=device-width,initial-scale=1" name="viewport">
-	<meta content="description" name="description">
-	<meta content="Mashup templates have been developped by Orson.io team" name="author">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<meta content="width=device-width,initial-scale=1" name="viewport">
+		<meta content="description" name="description">
+		<meta content="Mashup templates have been developped by Orson.io team" name="author">
 
 
-	<!-- Disable tap highlight on IE -->
-	<meta name="msapplication-tap-highlight" content="no">
+		<!-- Disable tap highlight on IE -->
 
-	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-icon-180x180.png' %}">
+		<link rel="icon" href="data:,">
 
-	<link rel="icon" href="data:,">
+		<title>Home page</title>
+		<style>
+			body {
+				margin: 0;
 
-	<title>Home page</title>
+				background: url('/static/images/caspar.jpg') no-repeat center center fixed;
+				background-size: cover;
+			}
+		</style>
 
-	<link href="{% static 'css/main.3f6952e4.css' %}" rel="stylesheet">
-</head>
+		<link href="{% static 'css/main.3f6952e4.css' %}" rel="stylesheet">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:900|Roboto+Mono:300,400,700"/>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	</head>
 
-<body class="minimal">
-	<header>
-		{% include 'base/navbar.html' %}
-	</header>
+	<body class="minimal">
 
-	<main>
-		<div class="hero-full-container background-image-container white-text-container">
-			{% block content %}
+		<header>
+			{% include 'base/navbar.html' %}
+		</header>
+
+		<main>
+			<div class="hero-full-container background-image-container white-text-container">
+				{% block content %}
 				<!-- Content goes here -->
-			{% endblock content %}
-		</div>
-	</main>
+				{% endblock content %}
+			</div>
+		</main>
 
-	<footer>
-		{% include 'base/footer.html' %}
-	</footer>
-</body>
+		<footer>
+			{% include 'base/footer.html' %}
+		</footer>
+	</body>
 
 </html>
