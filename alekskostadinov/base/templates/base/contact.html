@@ -2,97 +2,121 @@
 {% load static %}
 {% block content %}
 
-	<div class="section-container">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12" id="works">
-					<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-						<div class="text-center">
-							<h1 class="h2">Contact me</h1>
-							<p class="align-center">I'm always interested in new opportunities and collaborations, so
-								feel free to get in touch
-								with me! Whether you have a project you'd like to discuss, a question about my work, or
-								just
-								want to say hello, I'd be happy to hear from you.
-								You can contact me using the information provided below, and I'll get back to you as
-								soon as
-								I can. I'm excited to hear from you and look forward to connecting with others in the
-								developer community.</p>
-						</div>
-						<br>
-						<div class="row">
-							<div class="col-md-10 col-md-offset-1">
+    <div class="section-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" id="works">
+                    <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+                        <div class="text-center">
+                            <h1 class="h2">Contact me</h1>
+                            <p class="align-center">I'm always interested in new opportunities and collaborations, so
+                                feel free to get in touch
+                                with me! Whether you have a project you'd like to discuss, a question about my work, or
+                                just
+                                want to say hello, I'd be happy to hear from you.
+                                You can contact me using the information provided below, and I'll get back to you as
+                                soon as
+                                I can. I'm excited to hear from you and look forward to connecting with others in the
+                                developer community.</p>
+                        </div>
+                        <br>
+                        <div class="col-md-10 col-md-offset-1">
 
-								<form action="{% url 'send email' %}" method="POST" class="reveal-content">
-									{% csrf_token %}
-									<div class="row">
-										<div class="col-md-7">
-											<input type="text" name="foo" style="display: none;">
-											<div class="form-group">
-												<input type="name" class="form-control" name="name" placeholder="Name">
-											</div>
-											<div class="form-group">
-												<input type="email" class="form-control" name="email"
-												       placeholder="Email">
-											</div>
-											<div class="form-group">
-												<textarea class="form-control" rows="5" name="message"
-												          placeholder="Enter your message"></textarea>
-											</div>
+                            <form class="reveal-content" method="POST" action="{% url 'send email' %}">
+                                <div class="col-md-7">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        {{ form.name }}
+                                        {% if form.name.errors %}
+                                            <ul class="errorlist">
+                                                {% for error in form.name.errors %}
+                                                    <li class="error-message">{{ error }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.email }}
+                                        {% if form.email.errors %}
+                                            <ul class="errorlist">
+                                                {% for error in form.email.errors %}
+                                                    <li class="error-message" style="color: red">{{ error }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.message }}
+                                        {% if form.message.errors %}
+                                            <ul class="errorlist">
+                                                {% for error in form.message.errors %}
+                                                    <li class="error-message">{{ error }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.botcatcher }}
+                                        {% if form.botcatcher.errors %}
+                                            <ul class="errorlist">
+                                                {% for error in form.message.errors %}
+                                                    <li class="error-message" style="color: red">{{ error }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                                    <button type="submit" class="btn btn-default btn-lg">Send</button>
+                                </div>
+                            </form>
 
-											<button type="submit" class="btn btn-default btn-lg">Send</button>
-										</div>
 
-										<div class="col-md-5 address-container">
-											<ul class="list-unstyled">
-												<li>
-								                      <span class="fa-icon">
-								                        <i class="fa fa-phone" aria-hidden="true"></i>
-								                      </span>
-													+ 359 879 52 73 XX
-												</li>
-												<li>
-								                      <span class="fa-icon">
-								                        <i class="fa fa-at" aria-hidden="true"></i>
-								                      </span>
-													kostadinov12@gmail.com
-												</li>
-												<li>
-								                      <span class="fa-icon">
-								                        <i class="fa fa fa-map-marker" aria-hidden="true"></i>
-								                      </span>
-													16 XXXXXX 1618 Sofia
-												</li>
-											</ul>
-											<h3>Follow me on social networks:</h3>
-											<a href="https://www.facebook.com/ForzaACM" title="" class="fa-icon">
-												<i class="fa fa-facebook"></i>
-											</a>
-											<a href="https://www.linkedin.com/in/%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%8A%D1%80-%D0%BA%D0%BE%D1%81%D1%82%D0%B0%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2-270a6b11b/"
-											   title="" class="fa-icon">
-												<i class="fa fa-linkedin"></i>
-											</a>
-											<a href="https://github.com/AleksKostadinov" title="" class="fa-icon">
-												<i class="fa fa-github" aria-hidden="true"></i>
-											</a>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="fooDiv">
-	<label for="foo">Leave this field blank</label>
-	<input type="text" name="foo" id="foo">
-	</div>
-	<script>
-	(function () {
-	    var e = document.getElementById("fooDiv");
-	    e.parentNode.removeChild(e);
-	})();
-	</script>
-{% endblock content %}
+                            <div class="col-md-5 address-container">
+                                <ul class="list-unstyled">
+                                    <li>
+										<span class="fa-icon">
+											<i class="fa fa-phone" aria-hidden="true"></i>
+										</span>
+                                        0879 52 73 66
+                                    </li>
+                                    <li>
+										<span class="fa-icon">
+											<i class="fa fa-envelope" aria-hidden="true">kostadinov12@gmail.com</i>
+										</span>
+
+                                    </li>
+                                    <li>
+										<span class="fa-icon">
+											<i class="fa fa fa-map-marker" aria-hidden="true"></i>
+										</span>
+                                        1618 Sofia
+                                    </li>
+                                </ul>
+                                <h3>Follow me on social networks:</h3>
+                                <a href="https://www.facebook.com/ForzaACM" title="" class="fa-icon">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%8A%D1%80-%D0%BA%D0%BE%D1%81%D1%82%D0%B0%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2-270a6b11b/"
+                                   title="" class="fa-icon">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/AleksKostadinov" title="" class="fa-icon">
+                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fooDiv">
+        <label for="foo">Leave this field blank</label>
+        <input type="text" name="foo" id="foo">
+    </div>
+    <script>
+        (function () {
+            var e = document.getElementById("fooDiv");
+            e.parentNode.removeChild(e);
+        })();
+    </script>
+{% endblock %}
