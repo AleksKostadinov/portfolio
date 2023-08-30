@@ -26,8 +26,18 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'storages',
+    'crispy_forms',
+    "crispy_bootstrap4",
     'honeypot',
+    'captcha',
 ]
+
+RECAPTCHA_PUBLIC_KEY = os.environ.get('PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = os.environ.get('PRIVATE_KEY')
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -147,4 +157,3 @@ AWS_QUERYSTRING_AUTH = False
 
 CSRF_TRUSTED_ORIGINS = ['https://alekskostadinov.site']
 HONEYPOT_FIELD_NAME = "secret_key"
-

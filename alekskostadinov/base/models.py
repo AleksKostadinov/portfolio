@@ -24,7 +24,7 @@ class Work(models.Model):
             slug = slugify(self.headline)
 
             has_slug = Work.objects.filter(slug=slug).exists()
-            count = 1
+            count = 0
             while has_slug:
                 count += 1
                 slug = slugify(self.headline) + '-' + str(count)
