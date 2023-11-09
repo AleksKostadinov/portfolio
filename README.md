@@ -1,4 +1,4 @@
-# Portfolio - see me [here](https://alekskostadinov.site/) 
+# Portfolio
 This is my personal portfolio site created to showcase my latest projects.
 
 FrontEnd: HTML, CSS, JavaScript
